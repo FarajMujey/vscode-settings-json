@@ -1,0 +1,538 @@
+{
+  "vim.easymotion": true,
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.visual": "underline",
+  "vim.cursorStylePerMode.visualblock": "line-thin",
+  "vim.cursorStylePerMode.visualline": "block-outline",
+  "vim.cursorStylePerMode.replace": "underline",
+  "vim.easymotionDimBackground": true,
+  "vim.easymotionDimColor": "#41505e",
+  "vim.easymotionMarkerFontWeight": "900",
+  "vim.easymotionMarkerForegroundColorOneChar": "#eb598d",
+  "vim.easymotionMarkerBackgroundColor": "#101010",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#b0d2fb",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#cbe9fd",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // File Utils
+    {
+      "before": ["<leader>", "n", "f"],
+      "commands": ["fileutils.newFile"]
+    },
+    {
+      "before": ["<leader>", "n", "d"],
+      "commands": ["fileutils.newFolder"]
+    },
+    {
+      "before": ["<leader>", "f", "n"],
+      "commands": ["fileutils.renameFile"]
+    },
+    // Extension: Bookmarks
+    {
+      "before": ["<leader>", "m"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["m", "a"],
+      "commands": ["bookmarks.list"]
+    },
+    {
+      "before": ["m", "c", "c"],
+      "commands": ["bookmarks.clear"]
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["<leader>", "g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["<leader>", "g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    // 控制activityBar可见
+    {
+      "before": ["<leader>", "a"],
+      "commands": [
+        // "workbench.action.toggleStatusbarVisibility",
+        "workbench.action.toggleActivityBarVisibility"
+        // "editor.action.toggleMinimap",
+        // "workbench.action.toggleFullScreen"
+      ]
+    },
+
+    {
+      "before": ["/"],
+      "after": ["<leader>", "<leader>", "/"]
+    },
+    // 快速上下行
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    },
+    // 检索
+    {
+      "before": ["F"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["<leader>", "<cr>"],
+      "commands": [":nohlsearch"]
+    },
+    {
+      "before": ["-"],
+      "after": ["N"]
+    },
+    {
+      "before": ["="],
+      "after": ["n"]
+    },
+    // 格式化文件
+    {
+      "before": ["\\", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // 当前标签切换
+    {
+      "before": ["g", "l"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["g", "h"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    // 侧边栏可见行
+    {
+      "before": ["t", "t"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["N", "N"],
+      "after": ["<esc>"]
+    },
+    // 移动当前行
+    {
+      "before": ["m", "j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["m", "k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    // 进入full secreen
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.toggleFullScreen"]
+    },
+    // easy motion to placeholder
+    {
+      "before": ["`"],
+      "after": ["<leader>", "<leader>", "s", "\\", "c", "l"]
+    },
+    {
+      "before": ["`", "`"],
+      "after": ["<leader>", "<leader>", "s", "\\"]
+    },
+    // 显示悬停
+    {
+      "before": ["\\"],
+      "commands": ["editor.action.showHover"]
+    },
+    // 重命名
+    {
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    // 重做
+    {
+      "before": ["U"],
+      "after": ["<C-r>"]
+    },
+    // 速览定义
+    {
+      "before": ["s", "d"],
+      "commands": ["editor.action.peekDefinition"]
+    },
+    // // 折叠代码块
+    // {
+    //   "before": ["<tab>"],
+    //   "commands": ["editor.toggleFold"]
+    // },
+    // 多窗口
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<C-w>", "t"],
+      "commands": ["workbench.action.toggleEditorWidths"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    // 保存、关闭文件
+    {
+      "before": ["W"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["Q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    // 打开、关闭状态栏
+    {
+      "before": [":"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": [";"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    // easy motion
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    // 选择下一个
+    {
+      "before": ["<leader>", "d"],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch",
+        "editor.action.addSelectionToNextFindMatch"
+      ]
+    },
+    {
+      "before": ["N", "n"],
+      "after": ["<esc>"]
+    },
+    {
+      "before": ["N", "N"],
+      "after": ["<esc>"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["N", "n"],
+      "after": ["<esc>"]
+    },
+    {
+      "before": ["N", "N"],
+      "after": ["<esc>"]
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<left>"]
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<down>"]
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<up>"]
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<right>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [";"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["N", "n"],
+      "after": ["<esc>"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    // 移动当前行
+    {
+      "before": ["m", "j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["m", "k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["compile-hero.openInBrowser"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    },
+    {
+      "before": ["N", "N"],
+      "after": ["<esc>"]
+    },
+    {
+      "before": ["/"],
+      "commands": ["editor.action.commentLine"]
+    },
+    // 句首，句尾跳转
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    // 选中相似的下一个
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.addSelectionToNextFindMatch"]
+    }
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.lineNumbers": "relative",
+  "workbench.list.smoothScrolling": true,
+  "editor.minimap.showSlider": "always",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "workbench.colorCustomizations": {
+    "[eppz!]": {
+      "editorIndentGuide.background": "#4e4a4a",
+      "sideBar.background": "#24262c",
+      "editorCursor.foreground": "#f14747",
+      "editorCursor.background": "#ffffff",
+      "tab.inactiveBackground": "#252526",
+      "sideBar.border": "#202125",
+      "editor.lineHighlightBackground": "#202125",
+      "activityBar.background": "#24262c"
+    },
+    "[GitHub Dark Dimmed]": {
+      "editorCursor.foreground": "#f14747",
+      "editorCursor.background": "#ffffff",
+      "sideBar.border": "#1e2228",
+      "activityBar.border": "#1e2228"
+    },
+    "[Gruvbox Material Dark]": {
+      "editor.background": "#242525",
+      "editorSuggestWidget.background": "#31302e",
+      "editorSuggestWidget.border": "#31302e",
+      "editorSuggestWidget.selectedBackground": "#558386",
+      "editorSuggestWidget.foreground": "#f9f0cc",
+      "editorSuggestWidget.highlightForeground": "#f2be50"
+    },
+    "[Monokai Pro (Filter Machine)]": {
+      "badge.background": "#2f393f",
+      "input.background": "#2f393f",
+      "editor.background": "#2f393f",
+      "badge.foreground": "#2f393f",
+      "terminal.background": "#2f393f",
+      "editorPane.background": "#2f393f",
+      "activityBar.background": "#1d2528",
+      "statusBar.background": "#2f393f",
+      "editor.linkedEditingBackground": "#2f393f",
+      "editorGroup.emptyBackground": "#2f393f",
+      "editorGutter.background": "#2f393f",
+      "activityBar.border": "#1d2528",
+      "sideBar.background": "#1d2528"
+    },
+    "[Cobalt Next]": {
+      "editorSuggestWidget.background": "#151c20",
+      "editorSuggestWidget.border": "#283741"
+    },
+    "[XD Theme]": {
+      "tab.activeBackground": "#242938",
+      "tab.activeBorder": "#242938",
+      "tab.activeBorderTop": "#fff"
+    },
+    "[Shades of Purple]": {
+      "editor.background": "#28284e"
+    },
+    "[Atom Material Theme]": {
+      "editorCursor.foreground": "#f14747",
+      "editorCursor.background": "#ffffff"
+    },
+    "[Gruvbox Dark Hard]": {
+      "activityBar.border": "#1d2021",
+      "sideBar.border": "#1d2021"
+    },
+    "statusBar.background": "#252526",
+    "statusBar.noFolderBackground": "#252526",
+    "statusBar.debuggingBackground": "#252526"
+  },
+  "guides.normal.style": "none",
+  "guides.active.width": 2,
+  "editor.wordWrapColumn": 120,
+  "editor.minimap.maxColumn": 80,
+  "editor.smoothScrolling": true,
+  "workbench.productIconTheme": "material-product-icons",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.cursorSmoothCaretAnimation": true,
+  "git.branchWhitespaceChar": "ᛋ",
+  "editor.fontLigatures": true,
+  "editor.glyphMargin": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "terminal.integrated.macOptionIsMeta": true,
+  "editor.semanticHighlighting.enabled": false,
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "full": {
+        "highlight": "rgba(165, 153, 233, 0.3)"
+      }
+    }
+  },
+  "importCost.largePackageColor": "#EC3A37F5",
+  "importCost.mediumPackageColor": "#B362FF",
+  "importCost.smallPackageColor": "#B362FF",
+  "emmet.triggerExpansionOnTab": true,
+  "terminal.integrated.fontSize": 17,
+  "editor.largeFileOptimizations": false,
+  "git.path": "/Users/farajmujey/Repository",
+  "workbench.preferredDarkColorTheme": "Electron",
+  "editor.overviewRulerBorder": false,
+  "window.titleBarStyle": "custom",
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "projectManager.groupList": true,
+  "search.followSymlinks": false,
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascriptreact",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (Eex)"
+  ],
+  "scm.diffDecorationsGutterVisibility": "hover",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "projectManager.showProjectNameInStatusBar": false,
+  "liveServer.settings.showOnStatusbar": false,
+  "editor.fontSize": 14,
+  "kite.showWelcomeNotificationOnStartup": false,
+  "editor.suggestSelection": "first",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "bounded",
+  "editor.formatOnPaste": true,
+  "prettier.bracketSpacing": true,
+  "prettier.configPath": "~/.prettierrc.json",
+  "prettier.arrowParens": "avoid",
+  "editor.tabSize": 2,
+  "editor.renderLineHighlight": "all",
+  "editor.cursorSurroundingLinesStyle": "all",
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "'Monaco for Powerline',Monaco, Consolas, Menlo, 'Couriekkkr New', monospace",
+  "todohighlight.isEnable": true,
+  "files.autoSave": "onFocusChange",
+  "editor.cursorBlinking": "phase",
+  "settingsSync.ignoredExtensions": ["tabnine.tabnine-vscode", "kiteco.kite"],
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "editor.lineHeight": 26,
+  "editor.renderIndentGuides": false,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.tree.indent": 10,
+  "git.enableSmartCommit": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.minimap.enabled": false,
+  "workbench.editor.openPositioning": "last",
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.limit.value": 8,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.enabled": true,
+  "cSpell.userWords": [
+    "antd",
+    "datetime",
+    "deque",
+    "Faraj",
+    "mujey",
+    "Popconfirm",
+    "Sider",
+    "unmount",
+    "vuex"
+  ],
+  "workbench.colorTheme": "GitHub Dark",
+  "material-icon-theme.folders.color": "#7b7d80",
+  "emmet.variables": {
+    "lang": "zh-CN",
+    "charset": "UTF-8"
+  },
+  "workbench.fontAliasing": "antialiased",
+  "cssrem.rootFontSize": 100,
+  "material-icon-theme.saturation": 0.8,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": false,
+  "terminal.integrated.fontFamily": "\"SF Mono Powerline\"",
+  "terminal.external.osxExec": "iTerm2.app",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontWeight": 200,
+  "terminal.integrated.lineHeight": 1.3,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 1
+}
